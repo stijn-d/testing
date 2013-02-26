@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <!-- <link rel="stylesheet" type="text/css" href="css/index.css" /> -->
+        <title>Hello World</title>
+
+        
+        
+         <style type='text/css'>
+            * {
+                margin:0px;
+                padding:0px;
+            }
+            
+            body{
+                overflow:hidden;
+            }
+              
+            .page {
+                display:block; /* can't be used in css transitions */
+                position:absolute;
+          
+               /* width:100%;
+                height:100%;*/
+                overflow:hidden;
+                
+                background-color:#fff;
+                
+                opacity:0;
+                top:0px;
+                left:0px;
+                
+                transition: opacity 0.5s,  top 0.5s, left 0.5s;
+                -moz-transition: opacity 0.5s,  top 0.5s, left 0.5s; 
+                -webkit-transition: opacity 0.5s,  top 0.5s, left 0.5s;
+                -o-transition: opacity 0.5s,  top 0.5s, left 0.5s;
+                
+                /* force hardware acceleration */
+                -webkit-transform: translate3d(0,0,0);
+                
+                z-index:0;
+            }
+            
+            .page.no_transition {
+                transition: opacity 0s,  top 0s, left 0s;
+                -moz-transition: opacity 0s,  top 0s, left 0s; 
+                -webkit-transition: opacity 0s,  top 0s, left 0s;
+                -o-transition: opacity 0s,  top 0s, left 0s;        
+            }
+            
+            .page img {
+                display:block;
+            }
+            
+            .page.active {
+                top:0px;
+                left:0px;
+                opacity:1;
+                display:block;
+                background-color:#ddd;
+                z-index:1;
+            }   
+            .page.outUp {
+                top:-50px;
+            }
+            .page.outDown {
+                top:50px;
+            }
+            .page.outLeft {
+                left:-50px;
+            }
+            .page.outRight {
+                left:50px;
+            }
+            
+            .page_overlay {
+                position:absolute;
+                top:0px;
+                right:0px;
+                bottom:0px;
+                left:0px;
+                
+                z-index:1;
+            }
+            
+            .page a{
+                position:relative;
+                z-index:2;
+            }
+
+          </style>
+      
+      <link rel="stylesheet" href="css/style.css">
+      
+    </head>
+    <body>
+
+
+   
+    
+    
+    
+    
+    
+    <div class='stack'>
+        <div class='page stack2_1'>
+            <a href="#" class="icon_home"><img src="img/icon_home.png"/></a>
+            <a href="#" class="icon_overview"><img src="img/icon_overview.png"/></a>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <div class='page_overlay'></div>
+        </div>
+        <div class='page stack2_2'>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <div class="content content_1">
+                <p>DSM is a global science – based company active in health, nutrition and materials.</p>
+                <p>By connecting its unique competences in Life Science and Material Science, DSM is driving economic prosperity, environmental progress and social advances to create value for all stakeholders.</p>
+                <p>DSM has annual net turnover of around Eur 9 billion and reinvests 14&#37; in research and development.</p>
+            </div>
+            <div class="content content_2">
+                <p>Today’s market needs are driven by a number of major global trends and challenges.</p>
+                <p>At DSM we are using our innovative strengths to address some of the most important trends and challenges, such as climate change, increasing energy scarcity, overstretched healthcare systems and hidden hunger.</p>
+                <p>Innovation at DSM is all about finding effective, sustainable solutions for the issues facing the world today and tomorrow.</p>
+            </div>
+            <a href="#" class="btn_more"><img src="img/btn_orange.png"/></a>
+            <a href="#" class="play_video1"><img src="img/video_orange.png"/></a>
+        </div>
+        <div class='page stack2_3'>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <div class="content content_1">
+                <p class="italic">DSM Food Specialties is a leading producer of value-added ingredients solutions for the international food and beverage industries, contributing in a major way to the success of the world's favorite dairy, processed food, fruit juice, alcoholic beverage and functional food brands.</p>
+            </div>
+            <div class="content content_2">
+                <h3>Our mission is</h3>
+                <p>...to create brighter lives for people today and generations to come.</p>
+                <h3>We connect</h3>
+                <p>...our unique competences in life sciences and materials sciences to create solutions that nourish, protect and improve performance.</p>
+            </div>
+            <a href="#" class="btn_more"><img src="img/btn_orange.png"/></a>
+            <a href="#" class="play_video2"><img src="img/video_orange.png"/></a>
+        </div>
+        <div class='page stack2_4'>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <div class="content">
+                <p>DSM is the dairy industry’s leading supplier, catering to the needs of multinational companies as well as small local producers.</p>
+                <p>We are dedicated to supplying solutions, not just products. We work closely with our customers to help them overcome specific market challenges. To achieve this, we combine years of experience with a dedication to innovation and the best technical support possible.</p>
+                <p>We apply this approach to all dairy markets, including cheese, milk, fermented milk products and whey processing.</p>
+                
+            </div>
+            <div class='page_overlay'></div>
+        </div>
+        <div class='page stack2_5'>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <div class="content">
+                <p>We’re a Life Sciences and Materials Sciences company. We understand the human body and the many issues related to keeping people healthy and well nourished; and we’re also one of the world’s leading innovators in polymers and other performance materials. </p>
+                <p>By bringing together the innovation, expertise and insights of our different businesses we create a unique intersection – we like to call it the ‘X factor’ – where we’re able to solve all kinds of complex challenges for customers in areas like biomedical science…and of course food preservation.</p>
+            </div>
+            <div class="content2 content_1">
+                <p>Take our revolutionary Pack-Age&#8482; film. It gives manufacturers complete control over the cheese ripening process, helping them improve yields and cut costs. All while their cheese is protected from yeast and mold proliferation. We also combine skills and knowledge with partners to produce innovative solutions. Like our recent cooperation to create a resin used to produce storage food and water tanks with the lowest possible maintenance cost, great continuity of operation and corrosion resistance. </p>
+            </div>
+            <div class="content2 content_2">
+                <p>In other areas, we're helping customers deal with the global over-dependence on fossil fuels, cut energy consumption and emissions. We're also expanding into new areas like regenerative medicine.</p>
+                <p>In many areas, our bright science is making people's lives just that little bit better every day.</p>
+            </div>
+            <a href="#" class="btn_more"><img src="img/btn_purple.png"/></a>
+    
+        </div>
+        <div class='page stack2_6'>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <a href="#" class="play_video3"><img src="img/movie_green.png"/></a>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class='stack'>
+        <div class='page stack3_1'>
+            <a href="#" class="icon_home"><img src="img/icon_home.png"/></a>
+            <a href="#" class="icon_overview"><img src="img/icon_overview.png"/></a>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <div class='page_overlay'></div>
+        </div>
+        <div class='page stack3_2'>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <div class="content">
+                <h1>Food Protection</h1>
+                <p>From the days of salting, curing and smoking, preservation has come a long way.</p>
+                <p>As markets change and evolves you need answers to preservation challenges both old and new – from the massive growth in developing economies to the growing complexity of the food production chain, to the complex demands of the modern consumer.</p>
+                <p>At DSM, we’re solving these challenges for customers worldwide, every day.</p>
+            </div>
+            <div class="content2 content_1">
+                <p class="italic"><span class="dark">We know</span> this is an area where you're not willing to compromise. &#91;So we don't either&#93;.</p>
+                <p class="italic"><span class="dark">We know</span> you appreciate help on this complex topic. &#91;So we provide best-in-class support&#93;. </p>
+                <p class="italic"><span class="dark">We know</span> your clients increasingly want natural products. &#91;So that's the only thing we provide&#93;. </p>
+            </div>
+            <div class="content2 content_2">
+                <p class="italic"><span class="dark">We know</span> experience matters. &#91;We've offered natural protection longer than anyone else.&#93; </p>
+                <p class="italic"><span class="dark">And we know </span>safe, longer-lasting products are your license to operate. &#91;Our products are approved and certified by the relevant authorities&#93;</p>
+                <p class="italic"><span class="dark">In short, we offer the one thing you cannot be without: Protection you can Trust&#8482;.</span> </p>
+            </div>
+            <a href="#" class="btn_more"><img src="img/btn_pink.png"/></a>
+                
+            
+      </div>
+      <div class='page stack3_3'>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <div class='page_overlay'></div>
+        </div>
+        <div class='page stack3_4'>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <h1>Our natural preservation<br/>and packaging solutions</h1>
+            <div class="content content_1">
+                <p>Our first preservation products hit the market back in 1967. Since then we've launched a whole family of solutions based on changing market needs in dairy, baked goods, beverages and meats. Our solutions address problems with bacteria, molds and yeasts, while retaining color, taste and flavor.</p>
+                <p class="dark">Most importantly: All our food preservation products are based on natural sources - which means they can be claimed as natural preservatives.</p>
+            </div>
+            <div class="content content_2">
+                <p>They're available in easy-to-use formulations and can mostly be tailored to your individual needs. Thanks to lower processing temperatures and lower acid food formulations, we can even help you reduce your carbon footprint and improve your product quality.</p>
+            </div>
+            <a href="#" class="btn_more"><img src="img/btn_orange.png"/></a>
+        </div>
+        <div class='page stack3_5'>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <div class="content content_1">
+                <p class="dark">Our packaging solution, Pack-Age&#8482; is a great example of our combined knowledge and expertise in Life Sciences and Materials Science. </p>
+                <p>This recent innovation enables cheese producers to efficiently control and balance their cheese ripening process. Because Pack-Age&#8482; film is perm-selective, it supplies just enough moisture to the cheese while maintaining an effective oxygen barrier against mold growth on the cheese's surface. </p>
+            </div>
+            <div class="content content_2">
+                <p>When applied in combination with natamycin, this new way of ripening provides superior protection against yeast and mold growth.</p>
+                <p>The result: a naturally ripened cheese with a matured taste and firm texture – with a significant yield improvement and substantially improved carbon footprint over traditionally coated cheese.</p>
+            </div>
+            <a href="#" class="btn_more"><img src="img/btn_blue.png"/></a>
+        </div>
+        <div class='page stack3_6'>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <div class='page_overlay'></div>
+        </div>
+    </div>
+    
+    
+    
+    
+    <div class='stack'>
+        <div class='page stack4_1'>
+            <a href="#" class="icon_home"><img src="img/icon_home.png"/></a>
+            <a href="#" class="icon_overview"><img src="img/icon_overview.png"/></a>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <div class='page_overlay'></div>
+        </div>
+        <div class='page stack4_2'>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <p class="dark">Understanding the prevalent global trends in the <br/>
+            food industry is important. Knowing how to tackle them <br/>
+            is critical. Whichever way you cut it...</p>
+            <div class="content content_1">
+                <h1>Food Safety</h1>
+                <p>According to the US Center for Disease Control and Prevention, more than 48 million illnesses around the world each year are food-borne. That’s more than Spain's entire population. Every year. </p>
+                <p>Food safety is especially challenging right now in fast-growing markets and where food preservation experience is relatively limited - such as the BRIC nations. Which is where we can make life that little easier for customers - not just in terms of superior products, but a first-class service. For example, we’re always willing to come and advise on customers' manufacturing plant for possible hygiene troublespots, as well as troubleshoot ways of optimizing the manufacturing process.</p>
+            </div>
+            <div class="content content_2">
+                <h1>Food Safety</h1>
+                <p>Our Quality for Life&#8482; seal and Protection you can Trust&#8482; product portfolio are true to their word. All our products are of the highest quality, traceability, sustainability and consistency. And we can stop microbial outbreaks before they get started. That means you know the effort you put into making your products taste good is worth it: And that your customers and company are safe. </p>
+            </div>
+            <a href="#" class="btn_more"><img src="img/btn_green.png"/></a>
+            <div class='page_overlay'></div>
+      </div>
+      <div class='page stack4_3'>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <div class="content content_1">
+                <h1>Reducing global food waste</h1>
+                <p>In 2011, the UN's Food and Agriculture Organization reported that: "Roughly one third of the food produced in the world for human consumption – approximately 1.3 billion tons - gets lost or wasted". That’s a staggering amount considering the global distribution of food and population growth rates. </p>
+                <p>In developing countries, the problem is not human wastage but rather that 30-50&#37; of all food is lost in production by spoilage and through poor packaging. In the West, there’s a growing demand for smaller portion sizes and individual packets to meet changing demographic and smaller households.</p>
+            </div>
+            <div class="content content_2">
+                <h1>Reducing global food waste</h1>
+                <p>We can't stop people throwing food away once sold, but our packaging, preservation and coating solutions are helping food producers stay abreast of these developments. We can help you preserve products naturally with products like DELVO<span class="supertext">&#174;</span>CID, which prevents cheese, meats, baked goods and even beverages from spoiling from yeast or molds.</p>
+                <p>Bottom line: You can extend shelf life and preserve the food's natural vitality. That’s good for people, planet - and profit. </p>
+            </div>
+            <a href="#" class="btn_more"><img src="img/btn_orange.png"/></a>
+            <div class='page_overlay'></div>
+        </div>
+        <div class='page stack4_4'>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <div class="content content_1">
+                <h1>Convenience</h1>
+                <p>Who has the time to go shopping for fresh products every day? Who has the time to cook fresh products every day? Who has the foresight to plan each meal and take it with them when on the road?</p>
+                <p>We need fresh products that stay fresh and processed foods that retain their nutrients for longer. Grazing - eating on the fly - is part of modern life, but we all want our one- or two-person packs and other convenience foods from gas stations or supermarkets to be tasty and fresh.</p>
+            </div>
+            <div class="content content_2">
+                <h1>Convenience</h1>
+                <p>As the world’s population continues to grow, we are going to need more processed food, not less. In fact in the next 50 years we will need to produce more food than has ever been produced to feed a population of nine billion. By making sure food stays fresh and healthy for longer - from the farm to the fork via shop floor, the shops themselves and people’s kitchens – we’ll continue to help customers get there.</p>
+            </div>
+            <a href="#" class="btn_more"><img src="img/btn_blue.png"/></a>
+            <div class='page_overlay'></div>
+        </div>
+        <div class='page stack4_5'>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <div class="content content_1">
+                <h1>Value for money</h1>
+                <p>These are tough economic times. Even if the quality of your food is good, you still need to compete on cost. And not just in the developed world. Emerging markets offer great opportunities. But here too quality and affordability must go hand-in-hand.</p>
+                <p>Our preservation products enable you to compete on cost, quality or both by allowing you to produce industrial quantities, remove manual labor and reduce waste levels. Most are highly effective in small quantities and supremely easy to use, so they cut preparation times. </p>
+            </div>
+            <div class="content content_2">
+                <h1>Value for money</h1>
+                <p>We’ll also help you preserve your food better, so it stays on the shelf for longer. Our PREMI<span class="supertext">&#174;</span>COAT, for example, is used for surface protection against mold and yeast and can increase the shelf life of sausages to around eight months.</p>
+                <p>It all adds up to fewer returns, less waste and greater profits.</p>
+            </div>
+            <a href="#" class="btn_more"><img src="img/btn_purple.png"/></a>
+            <a href="#" class="more start_calculator">OPEN XT3 CALCULATOR</a>
+            <div class='page_overlay'></div>
+        </div>
+        <div class='page stack4_6'>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <div class="content content_1">
+                <h1>Health &#38; vitality</h1>
+                <p>Sales of natural &#38; organic food and beverages in the US grew by 85&#37; compared to 2-3&#37; annually for conventional products between 2005 and 2009 and continues to grow.</p>
+                <p>In China, the health food market is expected to grow to USD 70 billion by 2015 (triple the 2010 figure).</p>
+                <p>Consumers are voting overwhelmingly with their wallets: they want natural foods, free from chemicals.</p>
+                <p>All of which makes DSM the natural choice food preservation, quite literally.</p>
+            </div>
+            <div class="content content_2">
+                <h1>Health &#38; vitality</h1>
+                <p>Our products are defined as ‘natural’. And because they are approved by the relevant authorities and comply with purity requirements, your customers know what they are putting into their mouths is safe.</p>
+                <p>Our solutions have no impact on taste. In fact, our natural preservative DELVO<span class="supertext">&#174;</span>NIS can even improve product quality as it helps lower processing temperatures. Meanwhile DELVO<span class="supertext">&#174;</span>CID , which combats yeasts and molds preventing their growth, has been shown to prevent the formation of carcinogens. </p>
+                <p>That’s protection with an upside. </p>
+            </div>
+            <a href="#" class="btn_more"><img src="img/btn_orange.png"/></a>
+            <div class='page_overlay'></div>
+        </div>
+        <div class='page stack4_7'>
+            <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+            <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+            <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+            <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            <div class='page_overlay'></div>
+        </div>
+    </div>
+        
+        
+        
+        
+        <div class='stack'>
+            <div class='page stack5_1'>
+                <a href="#" class="icon_home"><img src="img/icon_home.png"/></a>
+                <a href="#" class="icon_overview"><img src="img/icon_overview.png"/></a>
+                <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+                <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+                <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+                <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+                <div class='page_overlay'></div>
+            </div>
+            <div class='page stack5_2'>
+                <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+                <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+                <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+                <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+                <div class="content">
+                    <p class="italic">Fermentation has been used for thousands of years to extend shelf life and add organoleptic properties to food. But microbes also spoil food and do a great deal of harm by causing pathogenicity and forming toxins.<br/><br/></p>
+                    <p>As a food manufacturer you want to remain in control of your processes. Which is why we have spent more than 50 years learning how to retain the microbials you want while eliminating the ones that do harm. Our solutions help you deal with most types of harmful bacteria, yeasts or molds. For our tailored solutions, we can even come and troubleshoot and provide advices at your manufacturing plant for hygiene issues.</p>
+                </div>
+          </div>
+          <div class='page stack5_3'>
+                <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+                <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+                <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+                <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+                <div class='page_overlay'></div>
+            </div>
+            <div class='page stack5_4'>
+                <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+                <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+                <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+                <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+                <div class="carouselWrapper" id="carousel1">
+                        <div class="carouselContent slider1"></div>
+                </div>
+                <div class="device_top"></div>
+                <div class="device_bottom"></div>
+            </div>
+            <div class='page stack5_5'>
+                <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+                <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+                <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+                <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+                <div class="carouselWrapper" id="carousel2">
+                        <div class="carouselContent slider2"></div>
+                </div>
+                <div class="device_top"></div>
+                <div class="device_bottom"></div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        <div class='stack'>
+            <div class='page stack6_1'>
+                <a href="#" class="icon_home"><img src="img/icon_home.png"/></a>
+                <a href="#" class="icon_overview"><img src="img/icon_overview.png"/></a>
+                <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+                <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+                <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+                <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+                <div class='page_overlay'></div>
+            </div>
+            <div class='page stack6_2'>
+                <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+                <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+                <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+                <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+                <div class="content content_1">
+                    <p class="italic">Our preservation solutions cover multiple or several product areas, like dairy meat, baking...</p>
+                    <p>With their diverse value chains and production processes, each needs a specific solution to remain free from unwanted bacteria, yeasts and molds. For example, at the earliest stage of the cheese production process, milk is prone to bacterial infestation; equally, when cheese leaves the brine dip, you need to protect it from yeasts and molds. </p>
+                    <p>Different types of cheeses need different protection, as do other specialty dairy products like yogurt, yogurt-based drinks, buttermilk, sour cream and dairy-based deserts.</p>
+                </div>
+                <div class="content content_2">
+                    <p>We offer specific products and combinations of products that pinpoint all stages of production for our four key areas, as well as protecting your food once it leaves your factory.</p>
+                    <p>Remember: It's important that you always check regulations in your area of operation or contact our experts for some individual advice. </p>
+                </div>
+                <a href="#" class="btn_more"><img src="img/btn_darkblue.png"/></a>
+                <div class='page_overlay'></div>
+          </div>
+          <div class='page stack6_3'>
+                <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+                <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+                <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+                <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+                <div class="content content_1">
+                    <p class="dark">We're a global leader in value-added ingredient solutions for cheese production, preservation and protection. </p>
+                    <p>Cheese production is of course a fine art and the production process has several steps, from the transition of milk towards the cheese product, followed by the ripening process. This process can take a few weeks up to several years.</p>
+                    <p>One of the most critical factors in cheese production and ripening is to avoid the growth of unwanted microbial growth. These micro-organisms can be introduced by the milk from the farm and during the production and ripening process.</p>
+                </div>
+                <div class="content content_2">
+                <p>DSM developed solutions to tackle the problem at every one of these very different steps. In addition to differences in the general manufacturing process, each cheese also has its own specific characteristics that can be optimized through the select use of preservatives.</p>
+                    <p>Then of course there's our innovative packaging film, Pack-Age&#8482; - which offers different benefits for different cheese types. In some cases it can enhance yield by preventing too much loss of moisture; it can reduce waste and improve quality thanks to more consistent drying; and it can even improves taste and texture in comparison to barrier films. Overall, compared to regular coated cheese, it substantially reduces the carbon footprint per kg sliced cheese.</p>
+                </div>
+                <a href="#" class="btn_more"><img src="img/btn_orange.png"/></a>
+            </div>
+            <div class='page stack6_4'>
+                <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+                <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+                <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+                <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+                
+                
+            
+                <div class="carouselWrapper" id="carousel3">
+                    <div class="infographic_wrapper carouselContent slider3">
+                        <div class="infographic1 infographic"></div>
+                        <div class="infographic2 infographic"><a href='#' class="open_infographic2"><img src="img/infomore2.png"/></a></div>
+                        <div class="infograpic_content_wrapper infograpic_content_wrapper2 grey"><div class="infograpic_content infograpic_content_2"><p>Cheese production starts of course with milk. In this stage DELVO<span class="supertext">&#174;</span>ZYME can be added to control unwanted growth of Clostridia bacteria and so prevent late blowing defects (big eye-formation and off taste) in certain cheese types.</p></div></div>
+                        <div class="infographic3 infographic"><a href='#' class="open_infographic3"><img src="img/infomore3.png"/></a></div>
+                        <div class="infograpic_content_wrapper infograpic_content_wrapper3">
+                            <div class="infograpic_content infograpic_content_3">
+                                <h3>Curd</h3>
+                                <p>During curd production you must be beware of microbial spoilage. You can treat equipment with DELVO<span class="supertext">&#174;</span>CID to control yeast and mold.</p>
+                                <h3>Brine bath</h3>
+                                <p>Some cheese types are salted by a brining process that can last a few hours up to more than 5 days. DELVO<span class="supertext">&#174;</span>CID&#43; offers optimal brine and yeast control and extra security in controlling the microbial quality of your brine.</p>
+                                <h3>Spray/dip bath</h3>
+                                <p>Upon leaving the brine bath, cheeses are unprotected and vulnerable to yeast and mold. You can spray or dip consisting of DELVO<span class="supertext">&#174;</span>CID&#43; or DELVO<span class="supertext">&#174;</span>COAT L to protect them.</p>
+                            </div>
+                        </div>
+                        <div class="infographic4 infographic"><a href='#' class="open_infographic4"><img src="img/infomore4.png"/></a></div>
+                        <div class="infograpic_content_wrapper infograpic_content_wrapper4 grey">
+                            <div class="infograpic_content infograpic_content_4">
+                                <p>During ripening, cheeses are exposed to mold and yeast spoilage. We have several solutions for traditional ripening, film ripening, our innovative Pack-Age&#8482; ripening and our DELVO<span class="supertext">&#174;</span>COAT customized coatings.</p>
+                            </div>
+                        </div>
+                        <div class="infographic5 infographic"><a href='#' class="open_infographic5"><img src="img/infomore5.png"/></a></div>
+                        <div class="infograpic_content_wrapper infograpic_content_wrapper5">
+                            <div class="infograpic_content infograpic_content_5">
+                                <p>Add an anti-cake powder or spray solution to ensure shredded cheese is safe and protected from your factory to the consumer. Add DELVO<span class="supertext">&#174;</span>CID and/or DELVO<span class="supertext">&#174;</span>NIS to protect spreadable cheeses from bacteria, yeast and mold.</p>
+                            </div>
+                        </div>
+                        <div class="infographic6 infographic"><a href='#' class="open_infographic6"><img src="img/infomore6.png"/></a></div>
+                        <div class="infograpic_content_wrapper infograpic_content_wrapper6 grey">
+                            <div class="infograpic_content infograpic_content_6">
+                                <p>Proper manufacturing use of our solutions during production enables longer shelf life and fresher products at the customer end, In addition, products can be packed in a gas-atmosphere or pasteurized and packed with sealing.</p>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+           
+                 
+                 <div class="device_bottom"></div>
+                 
+            </div>
+            
+            
+            <div class='page stack6_5'>
+                <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+                <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+                <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+                <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+                
+                <a href="#" class="open_swiss cheesewheel_open_popup">Swiss cheese types</a>
+                <a href="#" class="open_cottage cheesewheel_open_popup">Cottage cheese</a>
+                <a href="#" class="open_pasta cheesewheel_open_popup">Pasta filata</a>
+                <a href="#" class="open_dutch cheesewheel_open_popup">Dutch cheese types</a>
+                <a href="#" class="open_hard cheesewheel_open_popup">Hard cheese types</a>
+                <a href="#" class="open_soft cheesewheel_open_popup">Semi soft cheese types</a>
+                <a href="#" class="open_cheddar cheesewheel_open_popup">Cheddar</a>
+                <a href="#" class="open_white cheesewheel_open_popup">White cheese types</a>
+                
+                <a href='#' class="open_overview cheesewheel_open_popup">PRODUCT INFO</a>
+            </div>
+            
+            
+            
+            <div class='page stack6_6'>
+                <a href='#up' class="btn_up"><img src="img/btn_hor.png"/></a>
+                <a href='#right' class="btn_right"><img src="img/btn_vert.png"/></a>
+                <a href='#down' class="btn_down"><img src="img/btn_hor.png"/></a>
+                <a href='#left' class="btn_left"><img src="img/btn_vert.png"/></a>
+            </div>
+        </div>
+    
+    
+    
+  
+        
+        
+        
+ 
+
+    
+<div class='stack'>
+        <div class='page active'>
+            Stack1 / page1
+            <a href='#up'>up</a>
+            <a href='#right'>right</a>
+            <a href='#down'>down</a>
+            <a href='#left'>left</a>
+            <img src='img/1.jpg' />
+            <div class='page_overlay'></div>
+        </div>
+        <div class='page'>
+            Stack1 / page2
+            <a href='#up'>up</a>
+            <a href='#right'>right</a>
+            <a href='#down'>down</a>
+            <a href='#left'>left</a>
+            <img src='img/2.jpg' />
+            <div class='page_overlay'></div>
+        </div>
+        <div class='page'>
+            Stack1 / page3
+            <a href='#up'>up</a>
+            <a href='#right'>right</a>
+            <a href='#down'>down</a>
+            <a href='#left'>left</a>
+            <img src='img/3.jpg' />
+            <div class='page_overlay'></div>
+        </div>
+    </div>
+    
+    <div class='stack'>
+        <div class='page'>
+            Stack2 / page1
+            <a href='#up'>up</a>
+            <a href='#right'>right</a>
+            <a href='#down'>down</a>
+            <a href='#left'>left</a>
+            <img src='img/4.jpg' />
+            <div class='page_overlay'></div>
+        </div>
+        <div class='page'>
+            Stack2 / page2
+            <a href='#up'>up</a>
+            <a href='#right'>right</a>
+            <a href='#down'>down</a>
+            <a href='#left'>left</a>
+            <img src='img/5.jpg' />
+            <div class='page_overlay'></div>
+        </div>
+        <div class='page'>
+            Stack2 / page3
+            <a href='#up'>up</a>
+            <a href='#right'>right</a>
+            <a href='#down'>down</a>
+            <a href='#left'>left</a>
+            <img src='img/6.jpg' />
+            <div class='page_overlay'></div>
+        </div>
+        <div class='page'>
+            Stack2 / page4
+            <a href='#up'>up</a>
+            <a href='#right'>right</a>
+            <a href='#down'>down</a>
+            <a href='#left'>left</a>
+            <img src='img/1.jpg' />
+            <div class='page_overlay'></div>
+        </div>
+    </div>
+    
+    <div class='stack'>
+        <div class='page'>
+            Stack3 / page1
+            <a href='#up'>up</a>
+            <a href='#right'>right</a>
+            <a href='#down'>down</a>
+            <a href='#left'>left</a>
+            <img src='img/2.jpg' />
+            <div class='page_overlay'></div>
+        </div>
+        <div class='page'>
+            Stack3 / page2
+            <a href='#up'>up</a>
+            <a href='#right'>right</a>
+            <a href='#down'>down</a>
+            <a href='#left'>left</a>
+            <img src='img/3.jpg' />
+            <div class='page_overlay'></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+        <script type='text/javascript' src='js/jquery-1.6.2.min.js'></script>
+        <script type='text/javascript' src='js/jquery-ui-1.8.16.custom.min.js'></script>
+        
+        <script type="text/javascript" src="cordova-2.4.0.js"></script>
+        <script type="text/javascript" src="js/swipe_widget.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
